@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
 
 env:
-  BUCKET_NAME : "typescript-express-artifact"
+  BUCKET_NAME : "typescript-express-artifacts"
   AWS_REGION : "us-east-1"
   GITHUB_REF: "main"
 
