@@ -5,7 +5,7 @@ on:
 
 env:
   BUCKET_NAME : "typescript-express-artifact"
-  AWS_REGION : "ap-south-1"
+  AWS_REGION : "us-east-1"
   GITHUB_REF: "main"
 
 
@@ -22,8 +22,8 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::464615698121:role/gitHub-actions-role
-          role-session-name: GitHub-Action-Role
+          role-to-assume: arn:aws:iam::803915362952:role/Github-Actions-Role
+          role-session-name: Github-Actions-Role
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Extract branch name
