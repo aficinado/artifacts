@@ -22,7 +22,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
+          role-to-assume: ${{ secrets.IAMROLE }}
           role-session-name: Github-Actions-Role
           aws-region: ${{ env.AWS_REGION }}
 
@@ -68,7 +68,7 @@ jobs:
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
+        role-to-assume: ${{ secrets.IAMROLE }}
         aws-region: ${{ env.AWS_REGION }}
     - run: |
         aws deploy create-deployment --application-name node-app --deployment-group-name ec2-app --s3-location bucket=typescript-express-artifacts,key=main/latest/project.zip,bundleType=zip
